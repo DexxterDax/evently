@@ -1,0 +1,50 @@
+
+# Getting Started
+
+## Installation
+
+To start using Evently in your project, you first need to install the package via npm:
+
+```bash
+npm install @rbxts/evently
+```
+
+## Defining Events
+
+Use the `EventDefinitions` function to create an event system with strongly typed event definitions. Define your event names and their corresponding data types in a single object.
+
+Example:
+
+```typescript
+import EventDefinitions from "@rbxts/evently";
+
+interface Test {
+    roblox: string;
+    game: number;
+}
+
+const events = EventDefinitions<{
+    foo: Test;
+}>();
+```
+
+## Registering Handlers
+
+Use the `on` method to register handlers for specific events.
+
+```typescript
+events.on("foo", (data) => {
+    print(`Game: ${data.game}, Roblox: ${data.roblox}`);
+});
+```
+
+## Triggering Events
+
+To fire an event and pass data to the handlers, use the `trigger` method:
+
+```typescript
+events.trigger("foo", {
+    roblox: "roblox",
+    game: 123,
+});
+```

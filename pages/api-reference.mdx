@@ -1,0 +1,50 @@
+# API Reference
+
+## `EventDefinitions<T>()`
+
+Creates a new event system with the specified event definitions.
+
+### Parameters
+- **`T`**: An object type where keys are event names and values are the data types associated with those events.
+
+### Example
+
+```typescript
+const events = EventDefinitions<{
+    exampleEvent: { message: string };
+}>();
+```
+
+---
+
+## `on<K extends keyof T>(eventName: K, handler: EventHandler<T[K]>): void`
+
+Subscribes a handler function to the specified event.
+
+### Parameters
+- **`eventName`**: The name of the event to subscribe to.
+- **`handler`**: A function that receives the event data.
+
+### Example
+
+```typescript
+events.on("exampleEvent", (data) => {
+    print(data.message);
+});
+```
+
+---
+
+## `trigger<K extends keyof T>(eventName: K, eventData: T[K]): void`
+
+Triggers an event, invoking all subscribed handlers with the provided data.
+
+### Parameters
+- **`eventName`**: The name of the event to trigger.
+- **`eventData`**: The data to pass to the event handlers.
+
+### Example
+
+```typescript
+events.trigger("exampleEvent", { message: "Hello, world!" });
+```

@@ -1,23 +1,12 @@
-# Nextra Docs Template 
+### **@rbxts/evently**  
+**Type-safe event management for Roblox TypeScript projects.**
 
-This is a template for creating documentation with [Nextra](https://nextra.site).
+Evently provides a robust and intuitive system for managing events in your Roblox projects, ensuring type safety and reducing runtime errors. Define events and their associated data types in one place, and enjoy seamless integration with strong TypeScript typing.
 
-[**Live Demo →**](https://nextra-docs-template.vercel.app)
+#### Features:
+- 💡 **Type-safe event handling**: No more guessing the structure of event data.  
+- ⚡ **Flexible API**: Easily subscribe to and trigger events.  
+- 🛠️ **Lightweight design**: Minimal overhead with maximum utility.  
 
-[![](.github/screenshot.png)](https://nextra-docs-template.vercel.app)
-
-## Quick Start
-
-Click the button to clone this repository and deploy it on Vercel:
-
-[![](https://vercel.com/button)](https://vercel.com/new/clone?s=https%3A%2F%2Fgithub.com%2Fshuding%2Fnextra-docs-template&showOptionalTeamCreation=false)
-
-## Local Development
-
-First, run `pnpm i` to install the dependencies.
-
-Then, run `pnpm dev` to start the development server and visit localhost:3000.
-
-## License
-
-This project is licensed under the MIT License.
+#### Why Evently?
+Evently is designed to streamline communication in your codebase by leveraging TypeScript’s powerful type system. Whether you're building games or utilities, Evently ensures your event system is reliable, maintainable, and bug-free.
