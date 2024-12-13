@@ -6,7 +6,42 @@
 To start using Evently in your project, you first need to install the package via npm:
 
 ```bash
-npm install @rbxts/evently
+npm install @terradreamgames/evently
+```
+
+## Configuration
+
+Since this package is not under the `@rbxts` namespace, you must configure your project to recognize it.
+
+### Update `tsconfig.json`
+
+Add the following to your `tsconfig.json`:
+
+```json
+{
+  "typeRoots": ["node_modules/@rbxts", "node_modules/@terradreamgames"]
+}
+```
+
+### Update `default.project.json`
+
+Add the following to your `default.project.json`:
+
+```json
+{
+  "rbxts_include": {
+    "$path": "include",
+    "node_modules": {
+      "$className": "Folder",
+      "@rbxts": {
+        "$path": "node_modules/@rbxts"
+      },
+      "@terradreamgames": {
+        "$path": "node_modules/@terradreamgames"
+      }
+    }
+  }
+}
 ```
 
 ## Defining Events
@@ -16,7 +51,7 @@ Use the `EventDefinitions` function to create an event system with strongly type
 Example:
 
 ```typescript
-import EventDefinitions from "@rbxts/evently";
+import EventDefinitions from "@terradreamgames/evently";
 
 interface Test {
     roblox: string;
